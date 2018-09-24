@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>星巴克</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+      <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  <style type="text/css">
+.container-fluid{
+padding:0;
+
+}
+
+/*左侧边栏*/
+.sidebar-left{
+  position: fixed;
+  background: #ffffff;
+  padding:15px 10px;
+  left:0;
+  z-index: 1000;
+  bottom: 0;/*botton top设置侧边栏固定高度，并充满一屏*/
+  top:0;
+  border-right: 1px solid #dee2e6;
+}
+
+
+.text{
+  margin-top:170px;
+  margin-bottom:30px;
+}
+
+
+/*右边板块*/
+.content{
+  padding:0;
+
+}
+
+/*轮播区域*/
+.action{
+  margin-top:-80px;
+  padding-top:55px;
+  margin-right:-12px;
+  background:#e2e6ea;
+}
+
+
+/*图片并列简介*/
+
+.nail{
+    /*padding-top:20px;*/
+    background:#e2e6ea;
+    margin-right:-12px;
+    height: 210px;
+    padding:15px 25px;
+}
+
+
+
+.club-image{
+    margin-top:70px;
+    margin-bottom: 10px;
+}
+
+/*星巴克精选*/
+    .cards{
+      background: #e2e6ea;
+      border:1px solid #1b1e21;
+      margin-top:30px;
+      padding: 20px 10px 30px 60px;
+    }
+
+
+.img-look {
+  width: 140px;
+  height: 140px;
+  z-index: 100;
+
+}
+
+   .card-caption{
+     text-align: center;
+     width:170px;
+     height:200px;
+     padding-top:50px;
+     background: #ffffff;
+     border: 1px solid #e2e6ea;
+     box-shadow: 3px 3px 4px 2px #dee2e6, 2px 3px 3px 4px #e2e6ea inset;
+          margin-top:-65px;
+          margin-left:-15px;
+   }
+
+.tabs{
+    margin:0 30px;
+    padding:10px 30px;
+    text-align: center;
+    font-size: 24px;
+    font-family: "Apple Color Emoji";
+}
+   .tab-wrap {
+       text-align: center;
+       width: 450px;
+       height: 450px;
+       overflow: hidden;
+     padding:50px 10px 15px 30px;
+
+   }
+
+
+      .imgs{
+          margin-left:50px;
+
+
+      }
+.introduce{
+    border:1px solid #dee2e6;
+    background: #fefefe;
+    box-shadow: 2px 3px 4px 2px #e2e6ea;
+}
+.in-1{
+    width:420px;
+
+}
+  </style>
+
+  </head>
+  <body>
+  <div>
+    <!--自适应布局-->
+    <div class="container-fluid">
+      <div class="row">
+        <!--左区域-->
+        <div class="col-sm-2 col-md-3 sidebar-left" >
+
+          <ul class="nav nav-pills nav-sidebar" >
+            <li><img src="基于bootstrap的星巴克网页\images\logo.svg"></li>
+            <li role="presentation">
+             <a  href="#" id="element" data-toggle="popover" data-container="body"
+                 data-placement="bottom" data-content="And here's some amazing content. It's very engaging. Right?">
+                 <strong>门店</strong>
+             </a>
+            </li>
+              <li role="presentation"><a href="#"><strong>我的账户</strong></a></li>
+            <li role="presentation"><a href="#"><strong>菜单</strong></a></li>
+            <li role="presentation" class="replay"><span>&nbsp&nbsp ...</span></li>
+          </ul>
+
+          <h3 class="text-center text">心情惬意，来杯咖啡吧<span>...</span></h3>
+
+          <p class="text-center">
+            <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModal">登录</a>
+            <a class="btn btn-success" href="#" role="button" data-toggle="modal" data-target="#myModal">注册</a>
+          </p>
+        </div>
+
+
+          <!-- /.modal -->
+          <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title">Hello! Dear Customer</h4>
+                      </div>
+                      <div class="modal-body input-group input-group-sm">
+                          <span class="input-group-addon">Name</span>
+                          <input type="text" class="form-control" placeholder="Username"></div>
+                      <div class="modal-body input-group input-group-sm">
+                          <span class="input-group-addon">PassWord</span>
+                          <input type="text" class="form-control" placeholder="Password">
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                  </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+          </div>
+
+
+
+        <!--右区域-->
+
+        <div class="col-sm-10 col-md-9 col-md-offset-3 col-sm-offset-2 content" >
+<!--轮播区域-->
+          <div id="carousel-example-generic" class="carousel slide action" data-ride="carousel">
+           <!--图片索引，在图片上添加小圆点效果-->
+            <ol class="carousel-indicators">
+              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner inner-image" role="listbox">
+              <div class="item active">
+                <a href="#"> <img src="基于bootstrap的星巴克网页\images\kv-mooncake.jpg" alt="..."></a>
+
+              </div>
+
+              <div class="item ">
+                <a href="#"><img src="基于bootstrap的星巴克网页\images\kv-bev.jpg" alt="..."></a>
+
+              </div>
+
+              <div class="item">
+                <a href="#"><img src="基于bootstrap的星巴克网页\images\fp-cold-foam.jpg" alt="..."></a>
+
+              </div>
+
+              <!-- Controls -->
+
+              <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+
+<!--图片并列简介-->
+          <div class="row  nail" >
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="基于bootstrap的星巴克网页\images\starbucks-tmall-0723-cn.jpg" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="基于bootstrap的星巴克网页\images\starbucks-design-studio-web-china.jpg" alt="...">
+              </a>
+            </div>
+            <div class="col-xs-6 col-md-4">
+              <a href="#" class="thumbnail">
+                <img src="基于bootstrap的星巴克网页\images\homepage-career-cn.jpg" alt="...">
+              </a>
+            </div>
+          </div>
+
+
+
+<!--俱乐部区-->
+          <div class="row text-center club">
+            <div class="col-xs-6 col-md-7 ">
+
+              <h3>星享俱乐部</h3>
+
+              <p>开启您的星享之旅，星星越多，
+                <p>会员等级越高|好礼越丰富。</p>
+                <a>了解更多></a>
+              </p>
+
+              <p>
+                <a href="#"><button type="button" class="btn btn-default active">注册</button></a>
+                <a href="#"><button type="button" class="btn btn-default active">登录</button></a>
+              </p>
+            </div>
+
+
+            <div class="col-xs-6 col-md-5 text-left">
+
+              <img class="club-image " src="基于bootstrap的星巴克网页\images\logo-msr.svg">
+
+            </div>
+          </div>
+<!--星巴克精选-->
+          <div class="row cards">
+            <div class="text-center">
+            <h3>星巴克精选</h3>
+              <br>
+            <p>
+              在星巴克天猫旗舰店发现更多咖啡心意
+            </p>
+           </div>
+            <div class="col-xs-12 col-md-3">
+            <a href="#">
+              <img class="img-look" src="基于bootstrap的星巴克网页\images\tmall-card-01.png">
+              <div class="card-caption">
+               <h4>星享卡</h4>
+                <p>
+                  开启您的</p>
+                <p>
+                  星巴克专属之旅
+
+                </p>
+                <a class="text-warning">了解更多>></a>
+              </div>
+            </a>
+           </div>
+
+            <div class="col-xs-12 col-md-3">
+              <a href="#"><img class="img-look" src="基于bootstrap的星巴克网页\images\tmall-card-02.png">
+                <div class="card-caption">
+                  <h4>星礼卡</h4>
+                  <p>
+                    用一份心礼</p>
+                  <p>
+                    让心意相随
+
+                  </p>
+                  <a class="text-warning">了解更多>></a>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-xs-12 col-md-3">
+              <a href="#"><img class="img-look" src="基于bootstrap的星巴克网页\images\tmall-eticket.png">
+                <div class="card-caption">
+                  <h4>星享卡</h4>
+                  <p>
+                    开启您的</p>
+                  <p>
+                    星巴克专属之旅
+
+                  </p>
+                  <a class="text-warning">了解更多>></a>
+                </div>
+
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-3">
+              <a href="#"><img class="img-look" src="基于bootstrap的星巴克网页\images\tmall-reserve.png">
+                <div class="card-caption">
+                <h4>星享卡</h4>
+                <p>
+                  开启您的</p>
+                <p>
+                  星巴克专属之旅
+
+                </p>
+                  <a class="text-warning">了解更多>></a>
+              </div>
+
+
+              </a>
+            </div>
+          </div>
+<!--星巴克文化-->
+
+<div class="row">
+
+        <div class="text-center">
+            <h2>1912 派克街 | 咖啡星讲堂
+
+               </h2>
+<p class="text-default">  了解更多星巴克咖啡文化</p>
+        </div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home"  aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+            <li role="presentation"><a href="#profile"  aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+        </ul>
+
+
+
+    <div class="tab-content imgs">
+        <div role="tabpanel" class="tab-pane active" id="home">
+            <div  class="col-xs-12 col-md-6 tab-wrap">
+            <a href="#">
+                <img src="基于bootstrap的星巴克网页\images/coffeehouse-4-fundamentals-kv.jpg" width="590px" height="275px"/>
+                <div class="introduce in-1">
+                    <h5>咖啡的起源于培植</h5>
+                </div>
+            </a>
+        </div>
+
+        <div  class="col-xs-12 col-md-6 tab-wrap">
+            <a href="#" class="thumbnail">
+                <img src="基于bootstrap的星巴克网页\images/coffeehouse-roast-story-kv.jpg"  />
+                <div class="introduce">
+                    <h5>咖啡调制</h5>
+                </div>
+            </a>
+        </div>
+        </div>
+
+
+
+        <div role="tabpanel" class="tab-pane" id="profile">
+            <div class="col-xs-12 col-md-6 tab-wrap">
+            <a href="#" class="thumbnail">
+                <img src="基于bootstrap的星巴克网页\images/coffeehouse-coffee-cultivation-kv.jpg"/>
+                <div class="introduce">
+                    <h5>咖啡烘焙</h5>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xs-12 col-md-6 tab-wrap">
+            <a href="#" >
+                <img src="基于bootstrap的星巴克网页\images/coffeehouse-pour-over-kv.jpg"  width="590px" height="275px"/>
+                <div class="introduce in-1">
+                    <h5>手冲咖啡</h5>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+
+    </div>
+        </div>
+
+        </div><!--<div container-->
+
+      </div><!--<div row-->
+      <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+      <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+      <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+      <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript">
+          $('#element').on('click', function () {
+              $('#element').popover('toggle');
+          })
+      </script>
+  </body>
+</html>
